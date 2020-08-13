@@ -1,0 +1,36 @@
+<table class="table table-sm table-striped">
+<thead>
+<tr>
+<th>ID</th><th>Topics</th><th></th><th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let p of getWeeks()">
+<td>Week {{p.week}}</td>
+<td >
+<div *ngFor="let x of p.Topic">
+    <h4 style="padding-left: 30px;" *ngFor="let h of x | keyvalue">
+<div *ngIf="(h.key=='name')">
+{{h.value}} 
+</div>
+</h4>
+</div>
+</td>
+<td></td>
+<td></td>
+<td>
+<button class="btn btn-sm btn-warning m-1"
+[routerLink]="['/admin/main/weeks/edit', p.week]">
+Edit
+</button>
+<button class="btn btn-sm btn-danger" (click)="deleteWeek(p.week)">
+Delete
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/weeks/create">
+Create New Week
+</button>

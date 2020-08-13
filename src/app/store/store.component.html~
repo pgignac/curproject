@@ -1,0 +1,10 @@
+<h1 class="gettingstarted-icon-text">Introduction to Linux OS</h1>
+<h2>Overview</h2>
+<p></p>
+<div class="row">
+	<div class="col-2">
+		<div *ngFor="week of weeks" class="blue-highlight">
+			<h3 class="learningoutcome-icon">Learning Outcomes</h3>
+			<p>At the end of this module {{week.wid}}, you will be able to:<br />&nbsp;</p>
+		</div>
+	</div>

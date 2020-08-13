@@ -1,0 +1,74 @@
+<h1 class="gettingstarted-icon-text">Introduction to Linux OS</h1>
+<button class="btn btn-block btn-danger mt-5" routerLink="/admin">Admin</button>
+<h2>Overview</h2>
+<div class="row">
+<div class="col-5">
+<div class="blue-highlight">
+<h3 class="learningoutcome-icon">Learning Outcomes</h3>
+<p>At the end of this module, you will be able to:<br />&nbsp;</p>
+<div>
+	<p *ngFor="let b of weeks[0].Outcomes" >{{b}}</p>
+</div>
+</div>
+</div>
+<div class="col-5">
+<div class="green-highlight">
+<h3 class="checklist-icon">Checklist</h3>
+<p>To complete this module, make certain that you complete the following tasks:</p>
+<ol>
+	<li *ngFor="let x of weeks[0].Instruction" >{{x}}</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="yellow-highlight">
+<h3 class="readings-icon">Reading List</h3>
+<table style="background-color: #ffffd6; height: 62px; width: 972px; border: 1px solid transparent;">
+<tbody>
+<tr style="height: 31px;">
+<td style="height: 31px; width: 486.667px;"><strong>Required Reading</strong></td>
+<td style="height: 31px; width: 486.061px;"><strong>Supplemental Reading</strong></td>
+</tr>
+<tr style="height: 31px;">
+<td style="height: 31px; text-align: left; vertical-align: top; width: 486.667px;">Sobell, Mark G. A Practical Guide to Fedora and Red Hat Enterprise Linux. Chapter 1</td>
+<td style="height: 31px; width: 486.061px;">
+    <p *ngFor="let y of weeks[0].Materials"> {{y}}</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="red-highlight">
+<h3 class="due-icon">Due this week</h3>
+    <p *ngFor="let z of weeks[0].Evaluation">{{z}}</p>
+</div>
+<hr />
+<h2>Content</h2>
+<div *ngFor="let f of weeks[0].Topic" >
+<div class="orange-highlight">
+<h3 class="content-icon">Topic</h3>
+<h4 style="padding-left: 30px;" *ngFor="let h of f | keyvalue">
+<div *ngIf="(h.key=='name')">
+{{h.value}} 
+</div>
+</h4>
+</div>
+<div class="purple-highlight">
+<h3 class="activity-icon">Activities</h3>
+<div *ngFor="let h of f | keyvalue">
+<div *ngIf="(h.key=='Activities')">
+    <p *ngFor="let m of h.value">{{m}}</p>
+</div>
+
+</div>
+</div>
+</div>
+<p>
+{{getWeekCount()}}
+</p>
+<div *ngFor="let z of getWeek(1) | keyvalue">
+    {{z.key}} <br>
+{{z.value}}
+</div>
+<p class="footer"></p>

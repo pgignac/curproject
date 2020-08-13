@@ -1,0 +1,11 @@
+<h2>Weeks</h2>
+<div>
+<p *ngFor="let item of getWeeks(); let i=index">
+<a href="weekslist/{{i+1}}">Week {{i+1}}</a>
+    
+</p>
+<div *ngFor="let z of getWeek() | keyvalue">
+    {{z.key}} <br>
+{{z.value}}
+</div>
+</div>

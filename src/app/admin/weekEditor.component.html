@@ -1,0 +1,47 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+[class.text-dark]="editing">
+<h5>{{editing ? "Edit" : "Create"}} Week</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+<div class="form-group">
+<label>Week</label>
+<input class="form-control" name="week" [(ngModel)]="week.week" />
+</div>
+
+<div class="form-group">
+<label>Outcomes</label>
+<input class="form-control" name="outcomes" [(ngModel)]="week.Outcomes" />
+</div>
+
+<div class="form-group">
+    <!--
+
+<label>Topics</label>
+<input class="form-control" name="topics" [(ngModel)]="week.Topic" />
+</div>
+    -->
+<div class="form-group">
+<label>Evaluation</label>
+<textarea class="form-control" name="description"
+[(ngModel)]="week.Evaluation">
+</textarea>
+</div>
+<div class="form-group">
+<label>Materials</label>
+<input class="form-control" name="materials" [(ngModel)]="week.Materials" />
+</div>
+<div class="form-group">
+<label>Instruction</label>
+<input class="form-control" name="instruction" [(ngModel)]="week.Instruction" />
+</div>
+<div class="form-group">
+<label>Date</label>
+<input class="form-control" name="dates" [(ngModel)]="week.Date" />
+</div>
+<button type="submit" class="btn btn-primary m-1" [class.btn-warning]="editing">
+{{editing ? "Save" : "Create"}}
+</button>
+<button type="reset" class="btn btn-secondary" routerLink="/admin/main/weeks">
+Cancel
+</button>
+</form>
